@@ -1,17 +1,11 @@
-function multiplicar(tabla, num) {
-    for (i = 0; i < 10; i++){
-        console.log("TABLA DEL " + tabla);
-        console.log("   ");
-        for (j = 0; j < 10;j++){
-            operacionMultiplicar = tabla * num;
-            console.log(tabla + " * " + num + " = " + operacionMultiplicar);
-            num++;
+function multiplicar(tabla_max, num_max) {
+    var resultadoRetornado = [];
+    for (tabla = 0; tabla <= tabla_max; tabla++) {
+        resultadoRetornado[tabla] = [];
+        for (num = 0; num <= num_max; num++) {
+            resultadoRetornado[tabla][num] = [tabla + " x " + num + " = " + (tabla * num)];
         }
-        console.log("   ");
-        console.log("   ");
-        tabla++;
-        num = 1;
     }
+    return resultadoRetornado;
 }
-
-multiplicar(1, 1);
+console.log(multiplicar(10, 10));
